@@ -1,0 +1,33 @@
+.edit {
+    background-color: #009688;
+    color: #fff;
+}
+
+.small-button {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-style: 14px;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+.big-button {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-style: 14px;
+    padding: 0 18px;
+    border-radius: 4px;
+}
+
+.button:hover {
+    opacity: .8;
+}
+
+.delete {
+    background-color: #ff5722;
+    color: #fff;
+}
