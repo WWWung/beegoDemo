@@ -24,7 +24,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label dt">标题</label>
                 <div class="layui-input-block dd">
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    <input type="text" id="title" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -35,11 +35,11 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label dt">点击数</label>
-                <input type="text" name="title" required lay-verify="required" placeholder="点击数" autocomplete="off" class="layui-input items-in-row">
+                <input type="text" name="title" required lay-verify="required" placeholder="点击数" autocomplete="off" class="layui-input items-in-row" id="clickNumber">
                 <label class="layui-form-label dt">品牌</label>
-                <input type="text" name="title" required lay-verify="required" placeholder="品牌" autocomplete="off" class="layui-input items-in-row">
+                <input type="text" name="title" required lay-verify="required" placeholder="品牌" autocomplete="off" class="layui-input items-in-row" id="brand">
                 <label class="layui-form-label dt">排序</label>
-                <input type="text" name="title" required lay-verify="required" placeholder="10-1000升序排列" autocomplete="off" class="layui-input items-in-row">
+                <input type="text" name="title" required lay-verify="required" placeholder="10-1000升序排列" autocomplete="off" class="layui-input items-in-row" id="sort">
             </div>
         </div>
         <div class="content-wrap">
@@ -50,8 +50,12 @@
                 <div id="textarea"></div>
             </div>
         </div>
+        <div class="btn-wrap">
+            <a href="javascript:;" class="small-button edit" id="save">保存</a>
+            <a href="javascript:;" class="small-button delete" id="cancel">返回</a>
+        </div>
     </div>
-    <script src="../../static/js/admin/productDetail.js"></script>
+    <script src="../../static/js/admin/productDetail.js "></script>
 </body>
 
 </html>

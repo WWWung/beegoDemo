@@ -14,7 +14,8 @@
 
 <body>
     <table class="layui-hide" id="products-list" lay-data="{id:'list'}"></table>
-    <script src="../../static/js/products.js"></script>
+    <button>新建</button>
+    <script src="../../static/js/admin/products.js"></script>
 </body>
 
 </html>

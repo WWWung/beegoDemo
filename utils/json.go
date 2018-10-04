@@ -1,12 +1,15 @@
 package utils
 
-import (
-	"encoding/json"
-	"test/throw"
-)
+import "fmt"
 
-//FromJSON ..
-func FromJSON(jsonStr string, obj interface{}) {
-	err := json.Unmarshal([]byte(jsonStr), obj)
-	throw.CheckErr(err)
+// //FromJSON ..
+// func FromJSON(jsonStr string, obj interface{}) {
+// 	err := json.Unmarshal([]byte(jsonStr), obj)
+// 	throw.CheckErr(err)
+// }
+
+//InterfaceToStr ..
+func InterfaceToStr(obj interface{}) string {
+	msg := fmt.Sprint(obj)
+	return msg
 }

@@ -80,3 +80,11 @@ func (m ProductsMapper) Insert(tx *sqlx.Tx, item *Product) (int, int) {
 	id, count := m.insertItem(tx, sqlStr, args...)
 	return id, count
 }
+
+//Update ..
+func (m ProductsMapper) Update(tx *sqlx.Tx, item *Product) int {
+	sqlStr := "update " + m.TableName + " set id=?,createTime=?,updateTime=?,createUserId=?,updateUserId=?,htmlContent=?,textContent=?,title=?,clickNumber=?,brand=?,sort=? where id=? "
+	var args = []interface{}{item.ID, item.CreateTime, item.UpdateTime, item.CreateUserID, item.UpdateUserID, item.HTMLContent, item.TextContent, item.Title, item.ClickNumber, item.Brand, item.Sort, item.ID}
+	count := m.deleteOrUpdateItems(tx, sqlStr, args...)
+	return count
+}

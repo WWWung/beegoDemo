@@ -24,6 +24,7 @@ func init() {
 	//	后台-产品中心
 	beego.Router("/admin/products", &controllers.ProductsController{})
 	beego.Router("/admin/productsList", &controllers.ProductsController{}, "post:ProductsList")
+	beego.Router("/admin/products.api", &controllers.ProductsController{}, "post:APIhandler")
 
 	//	后台-产品详细页面
 	beego.Router("/admin/productDetail", &controllers.ProductsDetailController{})

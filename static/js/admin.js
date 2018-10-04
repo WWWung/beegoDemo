@@ -18,9 +18,10 @@ function openIframe(e) {
     var text = $(this).text();
     var url = $(this).attr("lay-id");
     element.tabDelete('tap', url)
+        //  iframe高度自适应问题待续...
     element.tabAdd('tap', {
         title: text,
-        content: "<div><iframe frameborder='0' src='/" + url + "' style='width:100%;height:100%;'></iframe></div>",
+        content: "<div><iframe frameborder='0' src='/admin/" + url + "' style='width:100%;min-height:600px;' id='iframe'></iframe></div>",
         id: 'products'
     })
     element.tabChange('tap', url)

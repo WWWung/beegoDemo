@@ -66,7 +66,7 @@ func (m BaseMapper) getItems(tx *sqlx.Tx, pageIndex int, rowsInPage int, dest in
 		}
 	}()
 	if rowsInPage != 0 {
-		offset := m.PageIndexToLimit(pageIndex, rowsInPage)
+		offset := m.pageIndexToLimit(pageIndex, rowsInPage)
 		sqlStr = sqlStr + " limit " + strconv.Itoa(offset) + "," + strconv.Itoa(rowsInPage)
 	}
 	if tx == nil {
@@ -76,7 +76,7 @@ func (m BaseMapper) getItems(tx *sqlx.Tx, pageIndex int, rowsInPage int, dest in
 }
 
 //PageIndexToLimit 将页码转换为limit的起始序号
-func (BaseMapper) PageIndexToLimit(pageIndex int, rowsInPage int) (offset int) {
+func (BaseMapper) pageIndexToLimit(pageIndex int, rowsInPage int) (offset int) {
 	if pageIndex < 1 {
 		pageIndex = 1
 	}
@@ -127,4 +127,21 @@ func (m BaseMapper) GetCount(tx *sqlx.Tx, whereStr string, args ...interface{}) 
 	err := row.Scan(&count)
 	throw.CheckErr(err)
 	return count
+}
+
+//删除或更新数据，出错抛出异常
+func (m BaseMapper) deleteOrUpdateItems(tx *sqlx.Tx, sqlStr string, args ...interface{}) int {
+
+	var sqlResult sql.Result
+	var err error
+
+	if tx == nil {
+		sqlResult, err = m.DB.Exec(sqlStr, args...)
+	} else {
+		sqlResult, err = gosql.WithTx(tx).Exec(sqlStr, args...)
+	}
+	throw.CheckErr(err)
+	rows, err := sqlResult.RowsAffected()
+	throw.CheckErr(err)
+	return int(rows)
 }
