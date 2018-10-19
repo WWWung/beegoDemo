@@ -1,0 +1,108 @@
+#root {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#page-title {
+    padding-top: 80px;
+    height: 60px;
+    background: linear-gradient(#e7e7e7, #fff);
+    border-top: 2px solid #9f9f9f;
+}
+
+#page-title h2 {
+    height: 60px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #0837d1, #95acf4);
+    width: 180px;
+    margin-left: 40px;
+    text-align: center;
+    line-height: 60px;
+    float: left;
+}
+
+#item-title {
+    float: left;
+    margin-left: 70px;
+    margin-top: 14px;
+    font-size: 22px;
+    color: #373737;
+}
+
+#page-title h2 i {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background: url("../../img/about.svg") center center no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+#page-content {
+    margin-top: 4px;
+}
+
+#aside {
+    position: relative;
+    float: left;
+    width: 180px;
+    padding-left: 40px;
+    float: left;
+}
+
+#tree {
+    line-height: 39px;
+    font-size: 14px;
+    text-indent: 20px;
+    border-left: 1px solid #757986;
+    border-right: 1px solid #757986;
+}
+
+#tree li {
+    border-bottom: 1px solid #757986;
+}
+
+#tree li a {
+    color: #1a1a1a;
+}
+
+#article {
+    width: 580px;
+    float: left;
+    margin-left: 70px;
+    background-color: #edf3f9;
+}
+
+#page {
+    text-align: center;
+}
+
+#article {
+    padding-bottom: 20px;
+}
+
+#article-head {
+    text-align: center;
+}
+
+#article-head h3 {
+    font-size: 24px;
+    line-height: 70px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+#article-info {
+    font-size: 12px;
+    line-height: 24px;
+    color: #b7b7b7;
+}
+
+#article-content {
+    width: 540px;
+    margin: 0 auto;
+    line-height: 24px;
+    font-size: 14px;
+    color: #1a1a1a;
+}

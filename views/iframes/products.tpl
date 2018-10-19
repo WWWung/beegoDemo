@@ -10,11 +10,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../static/css/global.css" />
     <script src="../../static/js/jq-min.js"></script>
     <script src="../../static/layui/layui.js"></script>
+    <script src="../../static/js/global.js"></script>
 </head>
 
 <body>
     <table class="layui-hide" id="products-list" lay-data="{id:'list'}"></table>
-    <button>新建</button>
+    <div>
+        <a class="small-button edit" href="/admin/productDetail">新建</a>
+    </div>
     <script src="../../static/js/admin/products.js"></script>
 </body>
 

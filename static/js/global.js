@@ -42,13 +42,30 @@ function getIntFromInput(id, data) {
     return v;
 }
 
+function getDateFromInput(id, data) {
+    var val = getStringFromInput(id);
+    if (!val) {
+        val = new Date("1960-01-01");
+    } else {
+        val = new Date(val);
+    }
+    if (data) {
+        data[id] = val;
+    }
+    return val;
+}
+
 //  ajax(数据用json)
 function asyncInvoke(url, method, data, successFunc, failureFunc) {
-    var d = {
-        m: encodeURIComponent(method),
-        data: data
-    };
-    console.log(data)
+    var d = {};
+    if (data instanceof Object) {
+        d = Object.assign({ m: encodeURIComponent(method) }, data);
+    } else {
+        d = {
+            m: encodeURIComponent(method),
+            data: data
+        };
+    }
     if (!failureFunc) {
         failureFunc = function(XMLHttpRequest, textStatus, errorThrown) {
             invokeServiceError(XMLHttpRequest, textStatus, errorThrown);
@@ -59,7 +76,7 @@ function asyncInvoke(url, method, data, successFunc, failureFunc) {
         url: url,
         success: successFunc,
         error: failureFunc,
-        timeout: 2000,
+        timeout: 20000,
         data: d
     })
 }
@@ -83,7 +100,7 @@ function parseQueryString() {
 
 function getQeuryParam(key) {
     var qs = parseQueryString();
-    return qs[key]
+    return qs[key] || "";
 }
 
 //  ajax失败
@@ -94,7 +111,44 @@ function invokeServiceError(XMLHttpRequest, textStatus, errorThrown) {
     errHandler("error");
 }
 
+function timeFormatter(time) {
+    if (new Date(time).getTime() < 0) {
+        return "";
+    }
+    return new Date(time).format("yyyy-MM-dd")
+}
+
 //  错误处理，待补充...
-function errHandler(errMsg) {
-    alert(errMsg);
+function errHandler(errMsg, layer) {
+    if (layer && layer.msg) {
+        layer.msg(errMsg);
+    } else {
+        alert(errMsg);
+    }
+}
+//  检查是否手机号码格式是否正确(开头为1，第二位数字为3、4、5、8，长度为11)
+function checkPhone(phone) {
+    return (/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone)) || phone.length === 11
+}
+//  检查字符串是否全是汉字
+function checkChinese(temp) {
+    var re = /^[\u4e00-\u9fa5]+$/;
+    return re.test(temp);
+}
+//必须为字母加数字且长度不小于6位
+function checkPassWord(password) {
+    var str = password;
+    if (str == null || str.length < 6) {
+        return false;
+    }
+    var reg1 = new RegExp(/^[0-9A-Za-z]+$/);
+    if (!reg1.test(str)) {
+        return false;
+    }
+    var reg = new RegExp(/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/);
+    if (reg.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
 }

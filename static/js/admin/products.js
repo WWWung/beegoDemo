@@ -1,4 +1,7 @@
-var table;
+var table,
+    layer,
+    list,
+    data;
 var columns = [
     [
         { field: 'sort', title: '排序', width: 120, align: "center" },
@@ -11,13 +14,14 @@ var columns = [
     ]
 ]
 
-layui.use('table', function() {
+layui.use(['table', 'layer'], function() {
     table = layui.table;
+    layer = layui.layer;
     initData()
 })
 
 function initData() {
-    var list = table.render({
+    list = table.render({
         elem: "#products-list",
         cols: columns,
         // skin: "line",
@@ -25,30 +29,46 @@ function initData() {
         limits: [5, 7, 10],
         limit: 5
     })
-    $.ajax({
-        type: 'post',
-        url: '/admin/productsList?page=1&index=2',
-        success: function(d) {
-            console.log(d)
-            list.reload({
-                data: d.data.rows
-            })
-        }
+    asyncInvoke("/products.api?sort=sort", "GetList", null, function(d) {
+        data = d.data.rows;
+        list.reload({
+            data: d.data.rows
+        })
     })
     return list;
 }
 
 function getHandleBtn(d) {
-    var edit = "<a href='javascript:;' class='small-button edit' style='margin:0 5px' onclick=edit('" + d.id + "')>编辑</button>";
-    var _delete = "<a href='javascript:;' class='small-button delete' style='margin:0 5px' onclick=del('" + d.id + "')>删除</button>";
+    var edit = "<a href='javascript:;' class='small-button edit' style='margin:0 5px' onclick=edit('" + d.id + "')>编辑</a>";
+    var _delete = "<a href='javascript:;' class='small-button delete' style='margin:0 5px' onclick=del('" + d.id + "','" + d.LAY_TABLE_INDEX + "')>删除</a>";
     return edit + _delete;
 }
 
 function edit(id) {
-    // console.log("edit", id);
     window.location.href = "/admin/productDetail?id=" + id;
 }
 
-function del(id) {
-    console.log("delete", id);
+function del(id, index) {
+    layer.confirm('确认删除？', {
+        btn: ['是的', '取消'] //按钮
+    }, function() {
+        layer.load(1, { shade: [0.2, '#000000'] });
+        asyncInvoke("/products.api", "Delete", { id: id }, function(d) {
+            if (d.code) {
+                errHandler(d.data);
+            } else {
+                data.splice(index, 1);
+                list.reload({
+                    data: data
+                });
+                alert("删除成功");
+            }
+            layer.closeAll();
+        })
+    }, function() {
+        // layer.msg('也可以这样', {
+        //   time: 20000, //20s后自动关闭
+        //   btn: ['明白了', '知道了']
+        // });
+    });
 }

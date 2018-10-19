@@ -35,7 +35,6 @@ func (c *AdminLoginController) Loginin() {
 		return
 	}
 	c.SetSession("adminUser", item)
-	// c.Redirect("/admin", 302)
 	data := map[string]interface{}{
 		"name": item.(*models.AdminUser).Name,
 	}

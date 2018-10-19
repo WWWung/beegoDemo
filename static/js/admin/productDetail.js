@@ -48,13 +48,12 @@ function initData() {
         }
     })
     if (id) {
-        asyncInvoke("/admin/products.api", "GetItem", { id: id }, function(d) {
+        asyncInvoke("/products.api", "GetItem", { id: id }, function(d) {
             if (d.code) {
                 errHandler(d.data);
                 return
             }
             data = d.data;
-            console.log(data)
             setDataToDom();
         })
     }
@@ -70,6 +69,16 @@ function getDataFromDom() {
     getIntFromInput("clickNumber", data);
     getStringFromInput("brand", data);
     getIntFromInput("sort", data);
+    if (data.createTime) {
+        data.createTime = new Date(data.createTime);
+    } else {
+        data.createTime = new Date("1960-01-01");
+    }
+    if (data.updateTime) {
+        data.updateTime = new Date(data.updateTime);
+    } else {
+        data.updateTime = new Date("1960-01-01");
+    }
 
     //  获取富文本编辑器里的内容
     var activeEditor = tinymce.activeEditor;
@@ -87,10 +96,12 @@ function save() {
         method = "Update";
     }
     var jsonData = JSON.stringify(data);
-    asyncInvoke("/admin/products.api", method, jsonData, function(d) {
-        console.log(d)
+    asyncInvoke("/products.api", method, jsonData, function(d) {
         if (d.code === 0) {
             alert("保存成功")
+            window.location.href = "/admin/productDetail?id=" + d.data
+        } else {
+            errHandler(d.data)
         }
     })
 }

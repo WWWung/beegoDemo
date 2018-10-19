@@ -1,0 +1,42 @@
+.title-wrap {
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.dd {
+    width: 510px;
+}
+
+.item-title {
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 40px;
+}
+
+.items-in-row {
+    float: left;
+    width: 200px;
+}
+
+.textarea-wrap {
+    width: 800px;
+    margin-left: 40px;
+}
+
+.btn-wrap {
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+#tip {
+    font-size: 12px;
+    line-height: 40px;
+    color: #999;
+    text-indent: 40px;
+}
+
+#rank-wrap {
+    float: left;
+    width: 200px;
+}

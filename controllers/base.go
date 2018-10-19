@@ -2,13 +2,12 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"reflect"
 	"strconv"
+	"test/models"
 	"test/throw"
 	"test/utils"
 
-	"github.com/astaxie/beego"
 	uuid "github.com/satori/go.uuid"
 )
 
@@ -56,8 +55,24 @@ func (c *BaseController) getDataFromPath(key string) interface{} {
 	return m[key][0]
 }
 
+func (c *BaseController) getStringFromPath(key string) (s string) {
+	v := c.getDataFromPath(key)
+	if v != nil {
+		s = v.(string)
+	}
+	return
+}
+
+func (c *BaseController) getSort() (s string) {
+	sort := c.getDataFromPath("sort")
+	if sort != nil {
+		s = sort.(string)
+	}
+	return
+}
+
 func (c *BaseController) getIDFromFormData() (id interface{}) {
-	ids := c.Input()["data[id]"]
+	ids := c.Input()["id"]
 	if len(ids) > 0 {
 		id = ids[0]
 	}
@@ -67,7 +82,7 @@ func (c *BaseController) getIDFromFormData() (id interface{}) {
 func (c *BaseController) getPageIndex() (i int) {
 	defer func() {
 		if err := recover(); err != nil {
-			i = 0
+			i = 1
 		}
 	}()
 	var err error
@@ -119,7 +134,6 @@ func (c *BaseController) apply(i interface{}, methodName string) []reflect.Value
 	obj := reflect.ValueOf(i)
 	params := make([]reflect.Value, 0)
 	m := obj.MethodByName(methodName)
-	fmt.Println("apply 方法" + methodName)
 	if !m.IsValid() {
 		panic("方法" + methodName + "不存在")
 	}
@@ -134,6 +148,9 @@ func (c BaseController) handler(i interface{}) {
 		}
 	}()
 	m := c.getMethod()
+	if m == "Add" || m == "Delete" || m == "Update" {
+		c.checkAdminPower()
+	}
 	r := c.apply(i, m)
 	if len(r) == 0 {
 		c.success(nil)
@@ -142,19 +159,32 @@ func (c BaseController) handler(i interface{}) {
 	}
 }
 
-//===============================================
-
-//MainController ..
-type MainController struct {
-	beego.Controller
+//CheckPower ..
+func (c BaseController) CheckPower() (power int) {
+	user := c.GetSession("user")
+	if user == nil {
+		power = 0
+	} else {
+		u := user.(*models.User)
+		power = u.Power
+	}
+	return
 }
 
-//Get ..
-func (c *MainController) Get() {
-	c.TplName = "index.tpl"
+//后台操作的时候检查权限
+func (c BaseController) checkAdminPower() {
+	admin := c.GetSession("adminUser")
+	if admin == nil {
+		panic("无操作权限")
+	}
 }
 
-//ReturnName ..
-func (c *MainController) ReturnName() {
-	c.Ctx.Output.Body([]byte("wwwung"))
+func (c *BaseController) isLogin() {
+	u := c.GetSession("user")
+	if u != nil {
+		user := u.(*models.User)
+		c.Data["tip"] = "您好，<strong>" + user.Name + "</strong>先生 <a href=\"javascript:;\" id=\"logout\">退出</a>"
+	} else {
+		c.Data["tip"] = "<a href=\"/register\">注册</a><a href=\"/login\">登录</a>"
+	}
 }

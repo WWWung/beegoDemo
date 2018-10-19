@@ -20,7 +20,7 @@
                     {{.Name}}
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">退了</a>
+                    <a href="javascript:;">退出</a>
                 </li>
             </ul>
         </div>
@@ -29,13 +29,17 @@
             <div class="layui-side-scroll">
                 <ul class="layui-nav layui-nav-tree" id="tree">
                     <li class="layui-nav-item" lay-id="products"><a href="javascript:;">产品中心</a></li>
-                    <li class="layui-nav-item"><a href="javascript:;">产品中心</a></li>
+                    <li class="layui-nav-item" lay-id="filesManage"><a href="javascript:;">文件管理</a></li>
+                    <li class="layui-nav-item" lay-id="summary"><a href="javascript:;">企业简介</a></li>
+                    <li class="layui-nav-item" lay-id="news"><a href="javascript:;">新闻中心</a></li>
+                    <li class="layui-nav-item" lay-id="customer"><a href="javascript:;">案例展示</a></li>
+                    <li class="layui-nav-item" lay-id="friendUrl"><a href="javascript:;">友情链接</a></li>
                 </ul>
             </div>
         </div>
         <!-- 内容 -->
         <div class="layui-body">
-            <div class="layui-tab" lay-allowClose="true" lay-filter="tap">
+            <div class="layui-tab" lay-allowClose="true" lay-filter="tab">
                 <ul class="layui-tab-title">
                 </ul>
                 <div class="layui-tab-content">

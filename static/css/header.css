@@ -1,0 +1,114 @@
+#home-head {
+    width: 1000px;
+    margin: 10px auto;
+    position: relative;
+}
+
+#login-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#login-wrap a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#home-logo {
+    float: left;
+}
+
+#home-logo a {
+    display: block;
+    width: 200px;
+    height: 70px;
+    background: url(../img/logo.png) left top no-repeat;
+}
+
+#home-head-nav {
+    display: flex;
+    justify-content: center;
+    padding-top: 38px;
+}
+
+#home-head-nav .hh-nav-sub {
+    width: 80px;
+    text-align: center;
+    margin: 0 10px;
+    position: relative;
+}
+
+#home-head-nav a {
+    line-height: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+#home-head-nav a:hover {
+    text-decoration: underline;
+}
+
+#home-banner {
+    width: 1000px;
+    height: 240px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#banner-nav {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+#banner-nav a {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 1px solid orange;
+    background-color: transparent;
+}
+
+#banner-nav .active {
+    border-color: #328fec;
+    background-color: #328fec;
+}
+
+#home-banner-list {
+    position: relative;
+}
+
+#home-banner-list li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+}
+
+#home-banner img {
+    display: block;
+    width: 1000px;
+    height: 240px;
+}
+
+.hh-sub-list {
+    position: absolute;
+    left: -10px;
+    top: 95%;
+    background: #fff;
+    padding: 10px;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+}
+
+.hh-sub-list li {
+    width: 80px;
+    text-align: center;
+    margin: 15px 0;
+}

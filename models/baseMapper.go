@@ -59,12 +59,6 @@ func (m BaseMapper) getItem(tx *sqlx.Tx, dest interface{}, sqlStr string, args .
 }
 
 func (m BaseMapper) getItems(tx *sqlx.Tx, pageIndex int, rowsInPage int, dest interface{}, sqlStr string, args ...interface{}) error {
-	defer func() {
-		if err := recover(); err != nil {
-			fmt.Printf("err")
-
-		}
-	}()
 	if rowsInPage != 0 {
 		offset := m.pageIndexToLimit(pageIndex, rowsInPage)
 		sqlStr = sqlStr + " limit " + strconv.Itoa(offset) + "," + strconv.Itoa(rowsInPage)

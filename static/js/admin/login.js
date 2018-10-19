@@ -1,3 +1,8 @@
+$("body").on("keydown", function(e) {
+    if (e.keyCode === 13) {
+        loginin()
+    }
+})
 $("#loginin").on("click", loginin);
 $("#captcha-image").on("click", captchaReload)
 

@@ -1,6 +1,6 @@
 .edit {
     background-color: #009688;
-    color: #fff;
+    color: #fff!important;
 }
 
 .small-button {
@@ -23,11 +23,30 @@
     border-radius: 4px;
 }
 
-.button:hover {
-    opacity: .8;
+.small-button:hover,
+.big-button:hover {
+    opacity: .7;
 }
 
 .delete {
     background-color: #ff5722;
     color: #fff;
+}
+
+.func {
+    background-color: #FFB800;
+    color: #fff;
+}
+
+.layui-disabled {
+    color: #333!important;
+    background-color: #eee;
+}
+
+.icon-turnTo {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../img/to.png") 100% 100% no-repeat;
+    background-size: 100%;
 }

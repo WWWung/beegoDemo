@@ -5,9 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>质控宝</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/clear.css" />
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/index.css" />
     <script src="../static/js/jq-min.js"></script>
+    <script src="../static/layui/layui.all.js"></script>
+    <script src="../static/js/global.js"></script>
 </head>
 
 <body>
@@ -15,158 +20,123 @@
         <div>
             <header id="home-head" class="clearfix">
                 <div id="home-logo">
-                    <!-- <a href="javascript:;"></a> -->
-                    <a href="/admin"></a>
+                    <a href="/"></a>
                 </div>
                 <ul id="home-head-nav">
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">首页</a> </li>
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">关于我们</a>
+                    <li class="hh-nav-sub"> <a href="/" class="sub-item">首页</a> </li>
+                    <li class="hh-nav-sub"> <a href="/summary" class="sub-item">关于我们</a>
                         <ul class="hh-sub-list">
-                            <li> <a href="javascript:;">企业简介</a> </li>
-                            <li> <a href="javascript:;">系统简介</a> </li>
+                            <li> <a href="/summary#company">企业简介</a> </li>
+                            <li> <a href="/summary#system">系统简介</a> </li>
                         </ul>
                     </li>
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">产品中心</a>
+                    <li class="hh-nav-sub"> <a href="/products" class="sub-item">产品中心</a>
+                    </li>
+                    <li class="hh-nav-sub"> <a href="/news" class="sub-item">新闻中心</a>
+                    </li>
+                    <li class="hh-nav-sub"> <a href="/customer" class="sub-item">案例展示</a>
+                    </li>
+                    <li class="hh-nav-sub"> <a href="/downloadCenter" class="sub-item">下载中心</a>
                         <ul class="hh-sub-list">
-                            <li> <a href="javascript:;">产品1</a> </li>
-                            <li> <a href="javascript:;">产品2</a> </li>
+                            <li> <a href="/downloadCenter#doc">技术文档</a> </li>
+                            <li> <a href="/downloadCenter#utils">系统工具</a> </li>
+                            <li> <a href="/downloadCenter#notice">操作说明</a> </li>
+                            <li> <a href="/downloadCenter#report">模拟报告</a> </li>
                         </ul>
                     </li>
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">新闻中心</a>
+                    <li class="hh-nav-sub"> <a href="/contact" class="sub-item">联系我们</a>
                         <ul class="hh-sub-list">
-                            <li> <a href="javascript:;">新闻1</a> </li>
-                            <li> <a href="javascript:;">新闻2</a> </li>
-                        </ul>
-                    </li>
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">案例展示</a>
-                        <ul class="hh-sub-list">
-                            <li> <a href="javascript:;">客户1</a> </li>
-                            <li> <a href="javascript:;">客户2</a> </li>
-                        </ul>
-                    </li>
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">下载中心</a>
-                        <ul class="hh-sub-list">
-                            <li> <a href="javascript:;">下载1</a> </li>
-                            <li> <a href="javascript:;">下载2</a> </li>
-                        </ul>
-                    </li>
-                    <li class="hh-nav-sub"> <a href="javascript:;" class="sub-item">联系我们</a>
-                        <ul class="hh-sub-list">
-                            <li> <a href="javascript:;">联系方式</a> </li>
-                            <li> <a href="javascript:;">在线留言</a> </li>
+                            <li> <a href="/contact#phone">联系方式</a> </li>
+                            <li> <a href="/contact#online">在线留言</a> </li>
                         </ul>
                     </li>
                 </ul>
+                <div id="login-wrap">
+                    {{str2html .tip}}
+                </div>
             </header>
         </div>
         <div id="home-banner">
-            <ul id="home-banner-list">
-                <!-- <li>
-                    <img src="../static/img/bg2.jpg" alt="">
-                </li>
-                <li>
-                    <img src="../static/img/bg3.jpg" alt="">
-                </li>
-                <li></li> -->
-            </ul>
-            <div id="banner-nav">
-                <!-- <a href="javascript:;"></a>
-                <a href="javascript:;"></a> -->
+            <div class="layui-carousel" id="banner-wrap">
+                <div carousel-item id="banner">
+                </div>
             </div>
         </div>
         <main id="home-main">
             <div class="main-sub">
                 <div class="main-title">
                     <h2 class="home-main-head"> 产品中心 </h2>
-                    <a href="javascript:;" class="more"> 更多&gt;&gt; </a>
+                    <a href="/products" class="more"> 更多&gt;&gt; </a>
                 </div>
                 <div>
-                    <ul class="home-main-list">
-                        <li> <a href="javascript:;" class="article-title"> 公路工程等级试验检测机构 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
+                    <ul class="home-main-list" id="product-list">
                     </ul>
                 </div>
             </div>
             <div class="main-sub">
                 <div class="main-title">
-                    <h2 class="home-main-head"> 行业动态 </h2>
-                    <a href="javascript:;" class="more"> 更多&gt;&gt; </a>
+                    <h2 class="home-main-head"> 新闻中心 </h2>
+                    <a href="/news" class="more"> 更多&gt;&gt; </a>
                 </div>
                 <div>
-                    <ul class="home-main-list">
-                        <li> <a href="javascript:;" class="article-title"> 公路工程等级试验检测机构 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
+                    <ul class="home-main-list" id="news-list">
                     </ul>
                 </div>
             </div>
             <div class="main-sub">
                 <div class="main-title">
-                    <h2 class="home-main-head"> 技术规范 </h2>
-                    <a href="javascript:;" class="more"> 更多&gt;&gt; </a>
+                    <h2 class="home-main-head"> 技术文档 </h2>
+                    <a href="/downloadCenter#doc" class="more"> 更多&gt;&gt; </a>
                 </div>
                 <div>
-                    <ul class="home-main-list">
-                        <li> <a href="javascript:;" class="article-title"> 公路工程等级试验检测机构 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
+                    <ul class="home-main-list" id="GuiFan-list">
                     </ul>
                 </div>
             </div>
             <div class="main-sub">
                 <div class="main-title">
                     <h2 class="home-main-head"> 系统工具 </h2>
-                    <a href="javascript:;" class="more"> 更多&gt;&gt; </a>
+                    <a href="/downloadCenter#utils" class="more"> 更多&gt;&gt; </a>
                 </div>
                 <div>
-                    <ul class="home-main-list">
-                        <li> <a href="javascript:;" class="article-title"> 公路工程等级试验检测机构 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
+                    <ul class="home-main-list" id="utils-list">
                     </ul>
                 </div>
             </div>
             <div class="main-sub">
                 <div class="main-title">
-                    <h2 class="home-main-head"> 系统操作 </h2>
-                    <a href="javascript:;" class="more"> 更多&gt;&gt; </a>
+                    <h2 class="home-main-head"> 操作说明 </h2>
+                    <a href="/downloadCenter#notice" class="more"> 更多&gt;&gt; </a>
                 </div>
                 <div>
-                    <ul class="home-main-list">
-                        <li> <a href="javascript:;" class="article-title"> 公路工程等级试验检测机构 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
+                    <ul class="home-main-list" id="option-list">
                     </ul>
                 </div>
             </div>
             <div class="main-sub">
                 <div class="main-title">
                     <h2 class="home-main-head"> 友情链接 </h2>
-                    <a href="javascript:;" class="more"> 更多&gt;&gt; </a>
                 </div>
                 <div>
-                    <ul class="home-main-list">
-                        <li> <a href="javascript:;" class="article-title"> 公路工程等级试验检测机构 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
-                        <li> <a href="javascript:;" class="article-title"> 公路工程工地试验室 </a> <span class="article-time"> 2018-09-19 </span> </li>
+                    <ul class="home-main-list" id="friend-list">
                     </ul>
                 </div>
             </div>
         </main>
+        <footer id="root-foot">
+            <div class="foot-row">
+                <span>电话:021-80370982</span>
+                <span>邮编:200216</span>
+            </div>
+            <div class="foot-row">
+                <span>单位：上海路岩信息科技有限公司</span>
+            </div>
+            <div class="foot-row">
+                <span>地址：上海浦东新区历城路70号3071A室</span>
+            </div>
+        </footer>
     </div>
+    <script src="../static/js/header.js"></script>
     <script src="../static/js/index.js"></script>
 </body>
 

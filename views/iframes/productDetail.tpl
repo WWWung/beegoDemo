@@ -29,9 +29,9 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label dt">创建时间</label>
-                <input type="text" class="layui-input items-in-row" id="createTime">
+                <input type="text" class="layui-input layui-disabled items-in-row" disabled id="createTime">
                 <label class="layui-form-label dt">更新时间</label>
-                <input type="text" class="layui-input items-in-row" id="updateTime">
+                <input type="text" class="layui-input layui-disabled items-in-row" disabled id="updateTime">
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label dt">点击数</label>
@@ -39,7 +39,7 @@
                 <label class="layui-form-label dt">品牌</label>
                 <input type="text" name="title" required lay-verify="required" placeholder="品牌" autocomplete="off" class="layui-input items-in-row" id="brand">
                 <label class="layui-form-label dt">排序</label>
-                <input type="text" name="title" required lay-verify="required" placeholder="10-1000升序排列" autocomplete="off" class="layui-input items-in-row" id="sort">
+                <input type="text" name="title" required lay-verify="required" placeholder="1-1000升序排列" autocomplete="off" class="layui-input items-in-row" id="sort">
             </div>
         </div>
         <div class="content-wrap">

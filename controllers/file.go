@@ -29,11 +29,13 @@ func (c *FileController) UploadFile() {
 	//	根据文件类型例如img、doc、pdf等等存放到不同文件夹
 	if folderF != nil {
 		folder = folderF.(string)
+	} else {
+		panic("文件信息错误")
 	}
 	src := "assets/" + folder + "/" + name
 	c.SaveToFile("file", src)
 	data := map[string]string{
-		"src": src,
+		"src": "/" + src,
 	}
 	c.success(data)
 }

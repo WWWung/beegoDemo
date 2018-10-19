@@ -58,3 +58,7 @@ body {
     margin: 20px auto;
     border-radius: 4px;
 }
+
+#captcha-image {
+    display: inline-block;
+}

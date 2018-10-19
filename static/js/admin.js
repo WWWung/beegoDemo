@@ -17,12 +17,12 @@ layui.use(['jquery', 'element', 'layer'], function() {
 function openIframe(e) {
     var text = $(this).text();
     var url = $(this).attr("lay-id");
-    element.tabDelete('tap', url)
+    element.tabDelete('tab', url)
         //  iframe高度自适应问题待续...
-    element.tabAdd('tap', {
+    element.tabAdd('tab', {
         title: text,
-        content: "<div><iframe frameborder='0' src='/admin/" + url + "' style='width:100%;min-height:600px;' id='iframe'></iframe></div>",
-        id: 'products'
+        content: "<div><iframe frameborder='0' src='/admin/" + url + "' style='width:100%;min-height:800px;' id='iframe'></iframe></div>",
+        id: url
     })
-    element.tabChange('tap', url)
+    element.tabChange('tab', url)
 }

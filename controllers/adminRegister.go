@@ -31,7 +31,6 @@ func (c *AdminRegisController) Regis() {
 		c.failure("验证码错误")
 		return
 	}
-	fmt.Println(c.Input())
 	mp := models.GetAdminUserMapper("")
 	name := c.GetString("name")
 	password := c.GetString("password")
