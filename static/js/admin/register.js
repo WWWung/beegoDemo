@@ -20,6 +20,7 @@ function regis() {
     }
     if (window.location.href.indexOf("localhost") < 0) {
         alert("环境错误");
+        return;
     }
     var data = {
         captchaId: captchaId,

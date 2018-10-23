@@ -103,7 +103,7 @@ function preview(id, suffix) {
         alert("该文件不支持预览！")
         return;
     }
-    window.open("http://localhost:8080/downloadCenter/preview?id=" + id);
+    window.open("/downloadCenter/preview?id=" + id);
 }
 
 function downloadFile(url, dName, suffix, rank) {
