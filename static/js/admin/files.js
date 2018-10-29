@@ -66,7 +66,7 @@ function getRank(row) {
 
 function getHandleBtn(d) {
     var edit = "<a href='javascript:;' class='small-button edit' style='margin:0 5px' onclick=edit('" + d.id + "')>编辑</button>";
-    var _delete = "<a href='javascript:;' class='small-button delete' style='margin:0 5px' onclick=del('" + d.id + "')>删除</button>";
+    var _delete = "<a href='javascript:;' class='small-button delete' style='margin:0 5px' onclick=del('" + d.id + "','" + d.LAY_TABLE_INDEX + "')>删除</button>";
     return edit + _delete;
 }
 
@@ -74,7 +74,7 @@ function edit(id) {
     window.location.href = "/admin/fileDetail?id=" + id;
 }
 
-function del(id) {
+function del(id, index) {
     layer.confirm('确认删除？', {
         btn: ['是的', '取消'] //按钮
     }, function() {
@@ -83,6 +83,10 @@ function del(id) {
             if (d.code) {
                 errHandler(d.data);
             } else {
+                data.splice(index, 1);
+                list.reload({
+                    data: data
+                });
                 alert("删除成功");
             }
             layer.closeAll();

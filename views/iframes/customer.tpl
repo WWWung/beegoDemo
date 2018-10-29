@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>新闻中心</title>
+    <title>案例展示</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../../static/layui/css/layui.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../../static/css/global.css" />

@@ -37,6 +37,7 @@ func init() {
 	beego.Router("/register", &controllers.UserController{}, "get:GetRegisterPage")
 	beego.Router("/login", &controllers.UserController{}, "get:GetLoginPage")
 	beego.Router("/user.api", &controllers.UserController{}, "*:APIhandler")
+	beego.Router("/admin/users", &controllers.UserController{}, "get:GetAdminUsersPage")
 
 	//	下载中心
 	beego.Router("/downloadCenter", &controllers.DownloadCenterController{})
@@ -45,6 +46,7 @@ func init() {
 	//留言
 	beego.Router("/contact", &controllers.ContactController{})
 	beego.Router("/contact.api", &controllers.ContactController{}, "*:APIhandler")
+	beego.Router("/admin/contact", &controllers.ContactController{}, "get:GetAdminContactPage")
 
 	//	后台管理页面
 	beego.Router("/admin", &controllers.AdminController{})

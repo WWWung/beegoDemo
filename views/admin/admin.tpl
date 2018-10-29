@@ -34,6 +34,8 @@
                     <li class="layui-nav-item" lay-id="news"><a href="javascript:;">新闻中心</a></li>
                     <li class="layui-nav-item" lay-id="customer"><a href="javascript:;">案例展示</a></li>
                     <li class="layui-nav-item" lay-id="friendUrl"><a href="javascript:;">友情链接</a></li>
+                    <li class="layui-nav-item" lay-id="users"><a href="javascript:;">账号管理</a></li>
+                    <li class="layui-nav-item" lay-id="contact"><a href="javascript:;">留言管理</a></li>
                 </ul>
             </div>
         </div>

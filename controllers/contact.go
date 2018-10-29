@@ -20,6 +20,11 @@ func (c *ContactController) Get() {
 	c.TplName = "contact/contact.tpl"
 }
 
+//GetAdminContactPage ..
+func (c *ContactController) GetAdminContactPage() {
+	c.TplName = "iframes/contact.tpl"
+}
+
 //GetList ..
 func (c ContactController) GetList() interface{} {
 	pageIndex := c.getPageIndex()
@@ -67,6 +72,13 @@ func (c ContactController) Add() string {
 	})
 
 	return item.ID
+}
+
+//Delete ..
+func (c ContactController) Delete() {
+	id := c.getIDFromFormData()
+	mp := models.GetWordMapper("")
+	mp.Delete(nil, id)
 }
 
 //APIhandler ..

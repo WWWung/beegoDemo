@@ -32,6 +32,11 @@ func (c *UserController) GetLoginPage() {
 	c.TplName = "user/login.tpl"
 }
 
+//GetAdminUsersPage ..
+func (c *UserController) GetAdminUsersPage() {
+	c.TplName = "iframes/users.tpl"
+}
+
 //Add ..
 func (c UserController) Add() string {
 	verify := c.verifyCaptcha()
