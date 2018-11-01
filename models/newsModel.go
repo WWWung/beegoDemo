@@ -21,6 +21,7 @@ type News struct {
 	Sort         int       `json:"sort" db:"sort"`
 	TitlePinYin1 string    `json:"titlePinYin1" db:"titlePinYin1"`
 	TitlePinYin2 string    `json:"titlePinYin2" db:"titlePinYin2"`
+	Original     int       `json:"original" db:"original"`
 }
 
 //NewsMapper ..
@@ -78,16 +79,16 @@ func (m NewsMapper) GetList(pageIndex int, rowsInPage int, sort string) (r inter
 
 //Insert ..
 func (m NewsMapper) Insert(tx *sqlx.Tx, item *News) (int, int) {
-	sqlStr := "insert into " + m.TableName + "(id,createTime,updateTime,htmlContent,textContent,title,clickNumber,sort,titlePinYin1,titlePinYin2) values (?,?,?,?,?,?,?,?,?,?)"
-	var args = []interface{}{item.ID, item.CreateTime, item.UpdateTime, item.HTMLContent, item.TextContent, item.Title, item.ClickNumber, item.Sort, item.TitlePinYin1, item.TitlePinYin2}
+	sqlStr := "insert into " + m.TableName + "(id,createTime,updateTime,htmlContent,textContent,title,clickNumber,sort,titlePinYin1,titlePinYin2,original) values (?,?,?,?,?,?,?,?,?,?,?)"
+	var args = []interface{}{item.ID, item.CreateTime, item.UpdateTime, item.HTMLContent, item.TextContent, item.Title, item.ClickNumber, item.Sort, item.TitlePinYin1, item.TitlePinYin2, item.Original}
 	id, count := m.insertItem(tx, sqlStr, args...)
 	return id, count
 }
 
 //Update ..
 func (m NewsMapper) Update(tx *sqlx.Tx, item *News) int {
-	sqlStr := "update " + m.TableName + " set id=?,createTime=?,updateTime=?,htmlContent=?,textContent=?,title=?,clickNumber=?,sort=?,titlePinYin1=?,titlePinYin2=? where id=? "
-	var args = []interface{}{item.ID, item.CreateTime, item.UpdateTime, item.HTMLContent, item.TextContent, item.Title, item.ClickNumber, item.Sort, item.TitlePinYin1, item.TitlePinYin2, item.ID}
+	sqlStr := "update " + m.TableName + " set id=?,createTime=?,updateTime=?,htmlContent=?,textContent=?,title=?,clickNumber=?,sort=?,titlePinYin1=?,titlePinYin2=?,original=? where id=? "
+	var args = []interface{}{item.ID, item.CreateTime, item.UpdateTime, item.HTMLContent, item.TextContent, item.Title, item.ClickNumber, item.Sort, item.TitlePinYin1, item.TitlePinYin2, item.Original, item.ID}
 	count := m.deleteOrUpdateItems(tx, sqlStr, args...)
 	return count
 }

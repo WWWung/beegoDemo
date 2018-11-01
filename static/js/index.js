@@ -15,13 +15,19 @@ function getProducts() {
 //  新闻中心
 function getNews() {
     asyncInvoke("/news.api?pageIndex=1&rowsInPage=5&sort=sort", "GetList", null, function(d) {
+        if (d.code || !d.data.rows) {
+            return;
+        }
         renderNewsList(d.data.rows);
     })
 }
 
-//  新闻中心
+//  友情链接
 function getFriends() {
     asyncInvoke("/friendUrl.api?pageIndex=1&rowsInPage=5&sort=sort", "GetList", null, function(d) {
+        if (d.code || !d.data.rows) {
+            return;
+        }
         renderFriendList(d.data.rows);
     })
 }
@@ -29,6 +35,9 @@ function getFriends() {
 //  技术规范
 function getGuiFan() {
     asyncInvoke("/filesManage.api?pageIndex=1&rowsInPage=10&sort=sort&searchKey=0", "GetList", null, function(d) {
+        if (d.code || !d.data.rows) {
+            return;
+        }
         renderGuiFanList(d.data.rows);
     })
 }
@@ -36,7 +45,9 @@ function getGuiFan() {
 //  系统工具
 function getUtils() {
     asyncInvoke("/filesManage.api?pageIndex=1&rowsInPage=10&sort=sort&searchKey=1", "GetList", null, function(d) {
-        console.log(d)
+        if (d.code || !d.data.rows) {
+            return;
+        }
         renderUtilsList(d.data.rows);
     })
 }
@@ -44,6 +55,9 @@ function getUtils() {
 //  操作说明
 function getOption() {
     asyncInvoke("/filesManage.api?pageIndex=1&rowsInPage=10&sort=sort&searchKey=2", "GetList", null, function(d) {
+        if (d.code || !d.data.rows) {
+            return;
+        }
         renderOptionList(d.data.rows);
     })
 }
@@ -68,7 +82,8 @@ function renderNewsList(data) {
         var title = data[i].title;
         var time = new Date(data[i].createTime).format("yyyy-MM-dd");
         var id = data[i].id;
-        html += '<li> <a href="/newsDetail?id=' + id + '" title=' + title + ' class="article-title">' + title + '</a> <span class="article-time">' + time + '</span> </li>'
+        var url = data[i].original ? data[i].textContent + " target='_blank'" : '/newsDetail?id=' + id + '';
+        html += '<li> <a href=' + url + ' title=' + title + ' class="article-title">' + title + '</a> <span class="article-time">' + time + '</span> </li>'
     }
     $("#news-list").html(html);
 }

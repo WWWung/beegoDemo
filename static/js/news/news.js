@@ -26,7 +26,8 @@ function renderProductList(data) {
         var time = new Date(data[i].createTime).format("yyyy-MM-dd");
         var id = data[i].id;
         var icon = '<i class="icon"></i>'
-        html += '<li class="clearfix">' + icon + ' <a href="/newsDetail?id=' + id + '" title=' + title + ' class="article-title">' + title + '</a> <span class="article-time">' + time + '</span> </li>'
+        var url = data[i].original ? data[i].textContent : '/newsDetail?id=' + id + '';
+        html += '<li class="clearfix">' + icon + ' <a href=' + url + ' title=' + title + ' class="article-title">' + title + '</a> <span class="article-time">' + time + '</span> </li>'
     }
     $("#list").html(html);
 }

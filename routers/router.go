@@ -43,7 +43,7 @@ func init() {
 	beego.Router("/downloadCenter", &controllers.DownloadCenterController{})
 	beego.Router("/downloadCenter/preview", &controllers.DownloadCenterController{}, "*:GetPriviewPage")
 
-	//留言
+	//	留言
 	beego.Router("/contact", &controllers.ContactController{})
 	beego.Router("/contact.api", &controllers.ContactController{}, "*:APIhandler")
 	beego.Router("/admin/contact", &controllers.ContactController{}, "get:GetAdminContactPage")

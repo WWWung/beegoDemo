@@ -3,9 +3,12 @@ $("#save").on("click", save)
 var laydate;
 var data;
 var id;
+var fomr;
 
-layui.use('laydate', function() {
+layui.use(['laydate', 'form'], function() {
     laydate = layui.laydate;
+    form = layui.form;
+    form.render();
     laydate.render({
         elem: "#createTime",
         type: "date"
@@ -68,6 +71,7 @@ function getDataFromDom() {
     getStringFromInput("updateTime", data);
     getIntFromInput("clickNumber", data);
     getIntFromInput("sort", data);
+    getIntFromInput("original", data);
     if (data.createTime) {
         data.createTime = new Date(data.createTime);
     } else {
@@ -106,12 +110,15 @@ function save() {
 }
 
 function setDataToDom() {
+    console.log(data)
     $("#title").val(data.title);
     $("#createTime").val(new Date(data.createTime).format("yyyy-MM-dd"));
     $("#updateTime").val(new Date(data.updateTime).format("yyyy-MM-dd"));
     $("#clickNumber").val(data.clickNumber);
     $("#sort").val(data.sort);
-
+    form.val("form", {
+        "original": data.original
+    });
     var activeEditor = tinymce.activeEditor;
     activeEditor.setContent(data.htmlContent);
 }

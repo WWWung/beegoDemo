@@ -9,6 +9,7 @@ import (
 	"github.com/ilibs/gosql"
 )
 
+// "dsn": "root:Wj531096404@tcp(rm-uf6xyy920l8413kt0qo.mysql.rds.aliyuncs.com:3306)/zkb_website?charset=utf8&parseTime=True&loc=Asia%2FShanghai",
 func main() {
 	conf.Init()
 
