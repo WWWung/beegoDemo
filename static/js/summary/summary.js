@@ -51,6 +51,14 @@ function selectLi(index) {
 }
 
 function render(data) {
+    if (!data) {
+        data = {
+            title: "",
+            clickNumber: "",
+            time: "",
+            htmlContent: ""
+        }
+    }
     $("#article-title").text(data.title);
     $("#clickNumber").text(data.clickNumber);
     $("#time").text(timeFormatter(data.time));

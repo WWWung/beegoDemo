@@ -9,7 +9,6 @@ import (
 	"github.com/ilibs/gosql"
 )
 
-// "dsn": "root:Wj531096404@tcp(rm-uf6xyy920l8413kt0qo.mysql.rds.aliyuncs.com:3306)/zkb_website?charset=utf8&parseTime=True&loc=Asia%2FShanghai",
 func main() {
 	conf.Init()
 
@@ -20,6 +19,9 @@ func main() {
 
 	//数据库初始化
 	configs := make(map[string]*gosql.Config)
+	//开发环境
+	// conf.Config.DataBase.Dsn = "root:wj531096404@tcp(gz-cdb-jm7yuqdy.sql.tencentcdb.com:62691)/zkb_website?charset=utf8&parseTime=True&loc=Asia%2FShanghai"
+
 	configs["default"] = &conf.Config.DataBase
 	gosql.Connect(configs)
 	//	注册静态目录

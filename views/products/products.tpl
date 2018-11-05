@@ -71,21 +71,12 @@
                 <span>产品中心</span>
             </h2>
         </div>
-        <div id="main">
+        <div id="main" class="clearfix">
             <ul id="product-list">
 
             </ul>
-            <div id="pagination">
-                <span>共{{.total}}条{{.pageCount}}页</span>
-                <span>现在是第{{.pageIndex}}页</span>
-                <a href="/products" id="prev-page">首页</a>
-                <a href="/products?pageIndex={{.pageCount}}" id="prev-page">尾页</a>
-                <a href="javascript:;" id="prev-page">上一页</a>
-                <a href="javascript:;" id="next-page">下一页</a>
-                <span>跳转到第</span>
-                <input type="text" id="page-num">
-                <span>页</span>
-                <a href="javascript:;" id="turn-page">确定</a>
+            <div id="content-wrap">
+                <div id="content"></div>
             </div>
         </div>
         <footer id="root-foot">

@@ -108,7 +108,7 @@ function renderGuiFanList(data) {
         var time = new Date(data[i].uploadTime).format("yyyy-MM-dd");
         var url = data[i].url;
         var suffix = data[i].extName;
-        html += "<li><a href='javascript:;' onclick=downloadFile('" + url + "','" + name + "','" + suffix + "','" + data[i].rank + "')>" + name + "</a><span class='article-time'>" + time + "</span></li>"
+        html += "<li><a href='/downloadCenter#doc' title='" + name + "'>" + name + "</a><span class='article-time'>" + time + "</span></li>"
     }
     $("#GuiFan-list").html(html);
 }
@@ -121,7 +121,7 @@ function renderUtilsList(data) {
         var time = new Date(data[i].uploadTime).format("yyyy-MM-dd");
         var url = data[i].url;
         var suffix = data[i].extName;
-        html += "<li><a href='javascript:;' onclick=downloadFile('" + url + "','" + name + "','" + suffix + "','" + data[i].rank + "')>" + name + "</a><span class='article-time'>" + time + "</span></li>"
+        html += "<li><a href='/downloadCenter#utils' title='" + name + "'>" + name + "</a><span class='article-time'>" + time + "</span></li>"
     }
     $("#utils-list").html(html);
 }
@@ -134,7 +134,7 @@ function renderOptionList(data) {
         var time = new Date(data[i].uploadTime).format("yyyy-MM-dd");
         var url = data[i].url;
         var suffix = data[i].extName;
-        html += "<li><a href='javascript:;' onclick=downloadFile('" + url + "','" + name + "','" + suffix + "','" + data[i].rank + "')>" + name + "</a><span class='article-time'>" + time + "</span></li>"
+        html += "<li><a href='/downloadCenter#notice' title='" + name + "')>" + name + "</a><span class='article-time'>" + time + "</span></li>"
     }
     $("#option-list").html(html);
 }

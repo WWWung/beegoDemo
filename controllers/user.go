@@ -93,7 +93,6 @@ func (c UserController) Update() {
 			}
 		}()
 
-		c.checkData(mp, tx, &item)
 		count := mp.Update(tx, &item)
 		if count == 0 {
 			panic("Insert未成功")

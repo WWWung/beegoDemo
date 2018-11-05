@@ -82,7 +82,7 @@
         <div class="btn-wrap">
             <a href="javascript:;" class="small-button func" id="upload">上传文件</a>
             <a href="javascript:;" class="small-button edit" id="save">保存</a>
-            <a href="javascript:;" class="small-button delete" id="cancel">返回</a>
+            <a href="/admin/filesManage" class="small-button delete" id="cancel">返回</a>
         </div>
         <div id="tip">
             <p>仅支持.rar/.doc/.pdf格式,且大小不能超过100M</p>

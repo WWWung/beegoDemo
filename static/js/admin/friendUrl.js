@@ -7,6 +7,7 @@ var columns = [
         { field: 'sort', title: '排序', width: 120, align: "center" },
         { field: 'name', title: '名称', width: 400, align: "center" },
         { field: 'url', title: '链接地址', width: 200, align: "center" },
+        { field: 'edit', title: '编辑', width: 200, templet: getHandleBtn, align: "center" }
     ]
 ]
 
@@ -53,7 +54,7 @@ function del(id, index) {
         btn: ['是的', '取消'] //按钮
     }, function() {
         layer.load(1, { shade: [0.2, '#000000'] });
-        asyncInvoke("/news.api", "Delete", { id: id }, function(d) {
+        asyncInvoke("/friendUrl.api", "Delete", { id: id }, function(d) {
             if (d.code) {
                 errHandler(d.data);
             } else {

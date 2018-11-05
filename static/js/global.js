@@ -32,7 +32,7 @@ function getStringFromInput(id, data) {
 //  获取input值并且设置到对象data里（int）
 function getIntFromInput(id, data) {
     var val = getStringFromInput(id);
-    var v = Number.parseInt(val);
+    var v = parseInt(val);
     if (v !== v) {
         v = 0;
     }

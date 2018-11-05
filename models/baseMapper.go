@@ -26,7 +26,6 @@ func (m BaseMapper) Tx(fn func(tx *sqlx.Tx) error) {
 
 //获取一行数据，出错或没有数据都返回nil
 func (m BaseMapper) getItem(tx *sqlx.Tx, dest interface{}, sqlStr string, args ...interface{}) (r interface{}) {
-
 	defer func() {
 		if err := recover(); err != nil {
 			switch t := err.(type) {

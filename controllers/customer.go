@@ -55,7 +55,7 @@ func (c *CustomerController) GetDetailPage() {
 	c.Data["htmlContent"] = obj.HTMLContent
 
 	c.isLogin()
-	c.TplName = "news/newsDetail.tpl"
+	c.TplName = "customer/customerDetail.tpl"
 }
 
 //GetCustomerPage ..

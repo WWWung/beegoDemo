@@ -71,12 +71,17 @@
                 <span>新闻中心</span>
             </h2>
         </div>
-        <div id="main">
-            <ul id="list">
+        <div id="main" class="clearfix">
+            <div id="img-wrap">
+                <img src="../../static/img/bgsub.png" alt="新闻中心">
+            </div>
+            <div id="main-content">
+                <ul id="list">
 
-            </ul>
-            <div id="page">
+                </ul>
+                <div id="page">
 
+                </div>
             </div>
         </div>
         <footer id="root-foot">

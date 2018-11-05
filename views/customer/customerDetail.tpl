@@ -64,7 +64,7 @@
                     <img src="../../static/img/product.png" alt="产品" id="pro-logo-img">
                 </div>
                 <div id="product-title">
-                    <h2>案例展示</h2>
+                    <h2><a href="/customer">案例展示</a></h2>
                     <p>Customer</p>
                 </div>
             </div>

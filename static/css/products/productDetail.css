@@ -1,6 +1,7 @@
 #main {
     width: 1000px;
     margin: 0 auto;
+    min-height: 700px;
 }
 
 #page-title {
@@ -28,6 +29,10 @@
 #product-title {
     font-weight: bold;
     margin-left: 10px;
+}
+
+#product-title h2 a {
+    color: #1a1a1a;
 }
 
 #product-title h2 {

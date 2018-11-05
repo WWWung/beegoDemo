@@ -70,7 +70,7 @@
                     <img src="../../static/img/product.png" alt="产品" id="pro-logo-img">
                 </div>
                 <div id="product-title">
-                    <h2>产品中心</h2>
+                    <h2><a href="/products">产品中心</a></h2>
                     <p>Product</p>
                 </div>
             </div>

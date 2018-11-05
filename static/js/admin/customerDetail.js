@@ -24,7 +24,8 @@ function initData() {
         language: "zh_CN",
         plugins: 'link lists image table colorpicker textcolor wordcount contextmenu codesample',
         fontsize_formats: '10px 11px 12px 14px 16px 18px 20px 24px',
-        toolbar: 'bold italic underline strikethrough | fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | undo redo | link unlink image | removeformat ',
+        toolbar: 'bold italic underline strikethrough | fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | undo redo | link unlink image | removeformat | fontselect ',
+        font_formats: "宋体=宋体;微软雅黑=微软雅黑;新宋体=新宋体;",
         images_upload_handler: function(blobInfo, success, failure) {
             if (blobInfo.blob().size > 3148576) {
                 failure('文件体积过大')

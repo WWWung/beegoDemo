@@ -15,9 +15,6 @@
 
 <body>
     <table class="layui-hide" id="list" lay-data="{id:'list'}"></table>
-    <!-- <div>
-        <a class="small-button edit" href="/admin/newsDetail">新建</a>
-    </div> -->
     <script src="../../static/js/admin/users.js"></script>
 </body>
 

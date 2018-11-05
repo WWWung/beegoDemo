@@ -1,4 +1,4 @@
-var pageIndex = Number.parseInt(getQeuryParam("pageIndex")) || 1;
+var pageIndex = parseInt(getQeuryParam("pageIndex")) || 1;
 var rowsInPage = 10;
 var total = 0;
 var pageCount = 0;
@@ -6,12 +6,12 @@ var pageCount = 0;
 $("#turn-page").on("click", paginate);
 $("#prev-page").on("click", toPrevPage);
 $("#next-page").on("click", toNextPage);
+window.onhashchange = initData;
 
 initData();
 
 function initData() {
-    asyncInvoke("/products.api?pageIndex=" + pageIndex + "&rowsInPage=" + rowsInPage, "GetList", null, function(d) {
-        console.log(d);
+    asyncInvoke("/products.api", "GetList", null, function(d) {
         if (d.code) {
             alert(d.data);
             return;
@@ -24,13 +24,22 @@ function initData() {
 
 function renderProductList(data) {
     var html = "";
+    var item = "";
+    var hash = window.location.hash;
+    if (!hash) {
+        window.location.hash = data.length ? encodeURIComponent(data[0].title) : "";
+    }
     for (var i = 0; i < data.length; i++) {
         var title = data[i].title;
         var time = new Date(data[i].createTime).format("yyyy-MM-dd");
         var id = data[i].id;
         var icon = '<i class="icon"></i>'
-        html += '<li class="clearfix">' + icon + ' <a href="/productDetail?id=' + id + '" title=' + title + ' class="article-title">' + title + '</a> <span class="article-time">' + time + '</span> </li>'
+        html += '<li class="clearfix">' + icon + ' <a href="/products#' + encodeURIComponent(title) + '" title=' + title + ' class="article-title">' + title + '</a>'
+        if ("#" + encodeURIComponent(title) === hash) {
+            item = data[i];
+        }
     }
+    $("#content").html(item.htmlContent);
     $("#product-list").html(html);
 }
 

@@ -64,7 +64,7 @@
                     <img src="../../static/img/product.png" alt="产品" id="pro-logo-img">
                 </div>
                 <div id="product-title">
-                    <h2>新闻中心</h2>
+                    <h2><a href="/news">新闻中心</a></h2>
                     <p>News</p>
                 </div>
             </div>

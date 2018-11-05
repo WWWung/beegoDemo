@@ -52,7 +52,7 @@
         </div>
         <div class="btn-wrap">
             <a href="javascript:;" class="small-button edit" id="save">保存</a>
-            <a href="javascript:;" class="small-button delete" id="cancel">返回</a>
+            <a href="/admin/customer" class="small-button delete" id="cancel">返回</a>
         </div>
     </div>
     <script src="../../static/js/admin/customerDetail.js "></script>
