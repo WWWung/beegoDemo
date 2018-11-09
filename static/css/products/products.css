@@ -3,7 +3,7 @@
 }
 
 #root {
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -24,8 +24,8 @@
 
 #content-wrap {
     float: left;
-    width: 736px;
-    padding: 5px;
+    width: 541px;
+    padding: 5px 0 5px 5px;
 }
 
 #content {

@@ -79,7 +79,7 @@
                             <a href="javascript:;">技术文档</a>
                         </li>
                         <li id="utils">
-                            <a href="javascript:;">操作工具</a>
+                            <a href="javascript:;">系统工具</a>
                         </li>
                         <li id="notice">
                             <a href="javascript:;">操作说明</a>

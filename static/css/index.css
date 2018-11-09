@@ -1,7 +1,7 @@
 #home-main {
     display: flex;
     justify-content: center;
-    width: 1000px;
+    width: 800px;
     flex-wrap: wrap;
     margin: 0px auto;
     padding: 20px 0;
@@ -9,17 +9,18 @@
     background: #fff;
 }
 
-#home-main .main-sub:nth-of-type(odd) {
+
+/* #home-main .main-sub:nth-of-type(odd) {
     margin-left: 30px;
 }
 
 #home-main .main-sub:nth-of-type(even) {
     margin-right: 30px;
-}
+} */
 
 .main-sub {
     height: 190px;
-    width: 450px;
+    width: 385px;
     margin-bottom: 20px;
     border: 1px solid #92cffe;
     border-radius: 2px;
@@ -64,7 +65,7 @@
     font-size: 12px;
     line-height: 24px;
     color: #343435;
-    max-width: 400px;
+    max-width: 280px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;

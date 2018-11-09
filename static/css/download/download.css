@@ -1,5 +1,5 @@
 #root {
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -69,9 +69,9 @@
 }
 
 #article {
-    width: 580px;
+    width: 560px;
     float: left;
-    margin-left: 70px;
+    margin-left: 20px;
     background-color: #edf3f9;
 }
 
@@ -90,7 +90,7 @@
 
 #list li span {
     display: inline-block;
-    width: 380px;
+    width: 365px;
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;

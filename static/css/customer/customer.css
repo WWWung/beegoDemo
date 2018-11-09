@@ -1,5 +1,5 @@
 #root {
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@
 
 #main-content {
     float: left;
-    width: 690px;
+    width: 490px;
     margin-left: 10px;
 }
 
