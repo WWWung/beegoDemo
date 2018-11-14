@@ -95,7 +95,7 @@ func (c ProductsController) Add() string {
 }
 
 //Update ..
-func (c ProductsController) Update() {
+func (c ProductsController) Update() string {
 	item := models.Product{}
 	c.getItem(&item, false)
 	item.TitlePinYin1, item.TitlePinYin2 = utils.ToPinYin1(item.Title)
@@ -110,12 +110,13 @@ func (c ProductsController) Update() {
 		}()
 
 		c.checkData(mp, tx, &item)
-		count := mp.Update(tx, &item)
-		if count == 0 {
-			panic("Insert未成功")
-		}
+		_ = mp.Update(tx, &item)
+		// if count == 0 {
+		// 	panic("Insert未成功")
+		// }
 		return nil
 	})
+	return item.ID
 }
 
 //GetItem ..

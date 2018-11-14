@@ -67,14 +67,14 @@
                 <i></i>
                 <span>关于我们</span>
             </h2>
-            <div id="item-title">公司简介</div>
+            <!-- <div id="item-title">公司简介</div> -->
         </div>
         <div id="page-content" class="clearfix">
             <div id="aside">
                 <div id="tree">
                     <ul>
                         <li id="company">
-                            <a href="javascript:;">公司简介</a>
+                            <a href="javascript:;">企业简介</a>
                         </li>
                         <li id="system">
                             <a href="javascript:;">系统简介</a>

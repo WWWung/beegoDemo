@@ -33,8 +33,18 @@
     color: #999;
 }
 
+#list-title {
+    padding: 10px 0;
+    background: linear-gradient(#e7e7e7, #fff);
+}
+
 #list-title h2 span {
-    border-bottom: 2px solid #999;
+    display: block;
+    width: 180px;
+    height: 60px;
+    background: linear-gradient(135deg, #0837d1, #95acf4);
+    text-align: center;
+    color: #fff;
 }
 
 #product-list li:hover {
@@ -55,12 +65,12 @@
     font-size: 12px;
     line-height: 24px;
     color: #343435;
-    max-width: 400px;
+    max-width: 350px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     line-height: 32px;
-    margin-left: 40px;
+    margin-left: 5px;
 }
 
 .article-time {

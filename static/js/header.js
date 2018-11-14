@@ -22,10 +22,7 @@ layui.use('carousel', function() {
 })
 
 function logout() {
-    // var name = $("#login-wrap").find("strong").eq(0).val();
-    // console.log(name);
     asyncInvoke("user.api", "Logout", {}, function(d) {
-        console.log(d);
         if (d.code) {
             errHandler(d.data);
         } else {
@@ -58,4 +55,8 @@ function hideNavList(e) {
 function initAside() {
     var html = "<div id=\"contact-aside\">\n    <div id=\"contact-aside-title\">\n        \u5728\u7EBF\u5BA2\u670D\n        <i id=\"close-aside\"></i>\n    </div>\n    <ul id=\"qq-list\">\n        <li>\n            <div class=\"qq-list-row clearfix\">\n                <i class=\"service-phone-icon\"></i>\n                <span class=\"service-phone\">15972367296</span>\n            </div>\n            <a href=\"tencent://message/?uin=1281975873&Site=%E5%9C%A8%E7%BA%BF%E5%AE%A2%E6%9C%8D&Menu=yes\">\u5728\u7EBF\u4EA4\u8C08</a>\n        </li>\n        <li>\n            <div class=\"qq-list-row clearfix\">\n                <i class=\"service-phone-icon\"></i>\n                <span class=\"service-phone\">15623148932</span>\n            </div>\n            <a href=\"tencent://message/?uin=917816882&Site=%E5%9C%A8%E7%BA%BF%E5%AE%A2%E6%9C%8D&Menu=yes\">\u5728\u7EBF\u4EA4\u8C08</a>\n        </li>\n    </ul>\n</div>"
     $("body").append(html);
+}
+
+window.onhashchange = function() {
+    window.location.reload()
 }

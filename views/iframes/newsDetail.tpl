@@ -38,7 +38,7 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label dt">创建时间</label>
-                <input type="text" class="layui-input layui-disabled items-in-row" disabled id="createTime">
+                <input type="text" class="layui-input  items-in-row" id="createTime">
                 <label class="layui-form-label dt">更新时间</label>
                 <input type="text" class="layui-input layui-disabled items-in-row " disabled id="updateTime">
             </div>

@@ -97,7 +97,11 @@ function save() {
         method = "Update";
     }
     var jsonData = JSON.stringify(data);
+    console.log(data)
+        // return
     asyncInvoke("/products.api", method, jsonData, function(d) {
+        // console.log(d)
+        // return
         if (d.code === 0) {
             alert("保存成功")
             window.location.href = "/admin/productDetail?id=" + d.data
