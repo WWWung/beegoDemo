@@ -1,6 +1,6 @@
 $("#tree li").on("click", function() {
     window.location.hash = "#" + $(this).attr("id");
-    initData();
+    // initData();
 })
 var layer;
 var laypage;
