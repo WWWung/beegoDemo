@@ -1,0 +1,14 @@
+body {
+    background: #808080;
+}
+
+.img {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#imgs {
+    width: 800px;
+    margin: 40px auto 0;
+}

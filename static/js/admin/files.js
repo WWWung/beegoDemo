@@ -11,7 +11,7 @@ var columns = [
         { field: 'uploadTime', title: '创建日期', width: 120, align: "center" },
         { field: 'downloadNumber', title: '下载量', width: 100, align: "center" },
         { field: 'size', title: '文件大小', width: 100, align: "center" },
-        { field: 'edit', title: '编辑', width: 200, templet: getHandleBtn, align: "center" }
+        { field: 'edit', title: '编辑', width: 280, templet: getHandleBtn, align: "center" }
     ]
 ]
 
@@ -67,7 +67,12 @@ function getRank(row) {
 function getHandleBtn(d) {
     var edit = "<a href='javascript:;' class='small-button edit' style='margin:0 5px' onclick=edit('" + d.id + "')>编辑</button>";
     var _delete = "<a href='javascript:;' class='small-button delete' style='margin:0 5px' onclick=del('" + d.id + "','" + d.LAY_TABLE_INDEX + "')>删除</button>";
-    return edit + _delete;
+    var preview = "<a href='javascript:;' class='small-button edit' style='margin:0 5px' onclick=preSetting('" + d.id + "','" + d.LAY_TABLE_INDEX + "')>预览设置</a>"
+    return edit + _delete + preview;
+}
+
+function preSetting(id, index) {
+    window.location.href = "/admin/preSetting?id=" + id;
 }
 
 function edit(id) {

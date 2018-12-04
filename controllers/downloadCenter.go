@@ -13,5 +13,10 @@ func (c *DownloadCenterController) Get() {
 
 //GetPriviewPage ..
 func (c *DownloadCenterController) GetPriviewPage() {
-	c.TplName = "download/preview.tpl"
+	c.TplName = "download/preview2.tpl"
+}
+
+//GetPriviewSettingPage ..
+func (c *DownloadCenterController) GetPriviewSettingPage() {
+	c.TplName = "iframes/preSetting.tpl"
 }

@@ -99,10 +99,10 @@ function renderList(data) {
 }
 
 function preview(id, suffix) {
-    if (suffix !== "pdf") {
-        alert("该文件不支持预览！")
-        return;
-    }
+    // if (suffix !== "pdf") {
+    //     alert("该文件不支持预览！")
+    //     return;
+    // }
     window.open("/downloadCenter/preview?id=" + id);
 }
 

@@ -1,0 +1,38 @@
+.title-wrap {
+    overflow: hidden;
+}
+
+.dd {
+    width: 510px;
+}
+
+.item-title {
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 40px;
+}
+
+.items-in-row {
+    float: left;
+    width: 200px;
+}
+
+.textarea-wrap {
+    width: 800px;
+    margin-left: 40px;
+}
+
+.btn-wrap {
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.imgWrap {
+    display: flex;
+    padding-left: 40px;
+}
+
+.img {
+    margin: 10px;
+}

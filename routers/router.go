@@ -42,6 +42,7 @@ func init() {
 	//	下载中心
 	beego.Router("/downloadCenter", &controllers.DownloadCenterController{})
 	beego.Router("/downloadCenter/preview", &controllers.DownloadCenterController{}, "*:GetPriviewPage")
+	beego.Router("/admin/preSetting", &controllers.DownloadCenterController{}, "*:GetPriviewSettingPage")
 
 	//	留言
 	beego.Router("/contact", &controllers.ContactController{})
@@ -62,6 +63,7 @@ func init() {
 	beego.Router("/admin/filesManage", &controllers.FilesManageController{})
 	beego.Router("/admin/fileDetail", &controllers.FilesManageController{}, "get:GetFileDetailPage")
 	beego.Router("/filesManage.api", &controllers.FilesManageController{}, "*:APIhandler")
+	beego.Router("/previewImg.api", &controllers.PreviewImgController{}, "*:APIhandler")
 
 	//	后台-简介（企业简介、系统简介）
 	beego.Router("/admin/summary", &controllers.SummaryController{})

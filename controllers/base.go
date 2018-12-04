@@ -55,6 +55,15 @@ func (c *BaseController) getDataFromPath(key string) interface{} {
 	return m[key][0]
 }
 
+func (c *BaseController) getIntFromPath(key string) (s int) {
+	v := c.getStringFromPath(key)
+	s, err := strconv.Atoi(v)
+	if err != nil {
+		panic(err)
+	}
+	return
+}
+
 func (c *BaseController) getStringFromPath(key string) (s string) {
 	v := c.getDataFromPath(key)
 	if v != nil {
