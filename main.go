@@ -20,7 +20,7 @@ func main() {
 	//数据库初始化
 	configs := make(map[string]*gosql.Config)
 	//开发环境
-	conf.Config.DataBase.Dsn = "root:wj531096404@tcp(gz-cdb-jm7yuqdy.sql.tencentcdb.com:62691)/zkb_website?charset=utf8&parseTime=True&loc=Asia%2FShanghai"
+	// conf.Config.DataBase.Dsn = "root:wj531096404@tcp(gz-cdb-jm7yuqdy.sql.tencentcdb.com:62691)/zkb_website?charset=utf8&parseTime=True&loc=Asia%2FShanghai"
 
 	configs["default"] = &conf.Config.DataBase
 	gosql.Connect(configs)
